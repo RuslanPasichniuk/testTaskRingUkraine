@@ -1,0 +1,22 @@
+plugins {
+	id 'java'
+	//id 'eclipse' // optional (to generate Eclipse project files)
+	id 'idea' // optional (to generate IntelliJ IDEA project files)
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+	compile 'io.rest-assured:scala-support:3.0.7'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
